@@ -8,8 +8,4 @@ Role of MQTT: In order to process the data to the users, MQTT is the best soluti
 
 I did a 1 min demo of the user interface: https://youtu.be/M_sP4r040yw
 
-
-
-
-
-
+Check the attached README.docx word document for more details.
