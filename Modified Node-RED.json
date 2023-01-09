@@ -1,0 +1,421 @@
+[
+    {
+        "id": "e9a41fed4f80a953",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f95ad4527886423a",
+        "type": "mqtt out",
+        "z": "e9a41fed4f80a953",
+        "name": "publish",
+        "topic": "weather",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b947f212feae9b5",
+        "x": 340,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3b44fb4bf62065ed",
+        "type": "mqtt in",
+        "z": "e9a41fed4f80a953",
+        "name": "sub",
+        "topic": "weather",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0b947f212feae9b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "2cc357b52432f482"
+            ]
+        ]
+    },
+    {
+        "id": "1f0897bc5fdf1010",
+        "type": "ui_button",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "group": "f6e38a4950078cab",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Refresh Button",
+        "tooltip": "",
+        "color": "Red",
+        "bgcolor": "White",
+        "className": "",
+        "icon": "cached",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "weather",
+        "topicType": "str",
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "f95ad4527886423a"
+            ]
+        ]
+    },
+    {
+        "id": "2cc357b52432f482",
+        "type": "ui_text",
+        "z": "e9a41fed4f80a953",
+        "group": "f6e38a4950078cab",
+        "order": 11,
+        "width": 17,
+        "height": 6,
+        "name": "",
+        "label": "<font size = 5> <font color= red>Weather Conditions:&emsp;&emsp;&emsp;",
+        "format": "<br><font size = 5>{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 510,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9667aba4e83dccf5",
+        "type": "ui_button",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "group": "f6e38a4950078cab",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Button",
+        "tooltip": "",
+        "color": "Red",
+        "bgcolor": "White",
+        "className": "",
+        "icon": "send",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "2cc357b52432f482"
+            ]
+        ]
+    },
+    {
+        "id": "a3f0bc362fb048e3",
+        "type": "ui_text_input",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "label": "<font size = 5> <font color=red> City:",
+        "tooltip": "",
+        "group": "f6e38a4950078cab",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "city",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "73d6c69a3ad1b0f1"
+            ]
+        ]
+    },
+    {
+        "id": "866bf533b6f7aabd",
+        "type": "ui_text_input",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "label": "<font size = 5> <font color=red> Country:",
+        "tooltip": "",
+        "group": "f6e38a4950078cab",
+        "order": 12,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "country",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "67222f244267da5c"
+            ]
+        ]
+    },
+    {
+        "id": "ebe5c86a66d456db",
+        "type": "mqtt out",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "topic": "city",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b947f212feae9b5",
+        "x": 610,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "67222f244267da5c",
+        "type": "mqtt out",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "topic": "country",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b947f212feae9b5",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c66d9c53f74b99d8",
+        "type": "ui_button",
+        "z": "e9a41fed4f80a953",
+        "name": "",
+        "group": "f6e38a4950078cab",
+        "order": 1,
+        "width": 22,
+        "height": 4,
+        "passthru": false,
+        "label": "<b><font color= black><font size =3>You can request weather information for any city of your choice. <br> Type the city in the city field, press Tab.<br> Then, type the corresponding two-letter country code in the country field, press enter. Then, press Refresh. <br> If the city name contains a space (e.g. New York) you should use %20 (e.g. New%20York)<br> You can find a list of Alpha-2 codes for any country at: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes.</b>",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 870,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73d6c69a3ad1b0f1",
+        "type": "function",
+        "z": "e9a41fed4f80a953",
+        "name": "function 2",
+        "func": "var index = msg.payload.indexOf(' ')\nif (index!= -1){\nmsg.payload = msg.payload.slice(0, index) + \"%20\" + msg.payload.slice(index+1);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "ebe5c86a66d456db"
+            ]
+        ]
+    },
+    {
+        "id": "b2f131dba37a2983",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 2,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "9904afbec04b967e",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 3,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "30ef527e42715c2f",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "787ba97b23fe8ead",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 7,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "a60f34c08e8c1244",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 8,
+        "width": 17,
+        "height": 1
+    },
+    {
+        "id": "f7aaa7b0a2745cbb",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d3a023cdad61b423",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f0d5ff345e9de94b",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 14,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "e877b0245a44acef",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 15,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "165919210e520e54",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 16,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "b6b54a6cda49c373",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 17,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "5b1310039ac419d6",
+        "type": "ui_spacer",
+        "z": "e9a41fed4f80a953",
+        "name": "spacer",
+        "group": "f6e38a4950078cab",
+        "order": 18,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "0b947f212feae9b5",
+        "type": "mqtt-broker",
+        "name": "Pub",
+        "broker": "mqtt://mqtt.eclipseprojects.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f6e38a4950078cab",
+        "type": "ui_group",
+        "name": "Send MQTT Message to ESP32 to Request Weather Conditions:",
+        "tab": "6f8f303c63c4d5e7",
+        "order": 1,
+        "disp": true,
+        "width": "22",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f8f303c63c4d5e7",
+        "type": "ui_tab",
+        "name": "Hussam & Charbel",
+        "icon": "",
+        "disabled": false,
+        "hidden": false
+    }
+]
